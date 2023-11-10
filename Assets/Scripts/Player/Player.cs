@@ -17,5 +17,15 @@ public class Player : MonoBehaviour
         Vector3 moveInput = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical"));
         Vector3 moveVelocity = moveInput.normalized * 5f; // velocity = direction * speed
         controller.SetVelocity(moveVelocity);
+
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity))
+        {
+            if (hit.collider != null && hit.collider.CompareTag("Floor"))
+            {
+                Vector3 hitPoint = hit.point;
+                controller.LookAt(hitPoint);
+            }
+        }
     }
 }

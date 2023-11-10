@@ -18,8 +18,14 @@ public class PlayerController : MonoBehaviour
         this.velocity = velocity;
     }
 
+    public void LookAt(Vector3 hitPoint)
+    {
+        this.transform.LookAt(new Vector3(hitPoint.x, this.transform.localScale.y, hitPoint.z));
+    }
+
     void FixedUpdate()
     {
+        // position + velocity * time = movement
         playerRigidbody.MovePosition(this.transform.position + velocity * Time.fixedDeltaTime);
     }
 }
