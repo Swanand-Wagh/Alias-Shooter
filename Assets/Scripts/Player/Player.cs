@@ -6,6 +6,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     private PlayerController controller;
+    public float speed = 5f;
 
     void Start()
     {
@@ -15,7 +16,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         Vector3 moveInput = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical"));
-        Vector3 moveVelocity = moveInput.normalized * 5f; // velocity = direction * speed
+        Vector3 moveVelocity = moveInput.normalized * speed; // velocity = direction * speed
         controller.SetVelocity(moveVelocity);
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
