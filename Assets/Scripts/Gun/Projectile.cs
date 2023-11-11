@@ -13,6 +13,17 @@ public class Projectile : MonoBehaviour
 
     void Update()
     {
-        this.transform.Translate(Vector3.right * bulletSpeed * Time.deltaTime);
+        float bulletDistance = bulletSpeed * Time.deltaTime;
+        this.transform.Translate(Vector3.right * bulletDistance);
+        CheckBulletCollision(bulletDistance);
+    }
+
+    private void CheckBulletCollision(float dist)
+    {
+        Ray ray = new Ray(this.transform.position, transform.right);
+        if (Physics.Raycast(ray, out RaycastHit hit, dist, LayerMask.GetMask("Enemy"), QueryTriggerInteraction.Collide))
+        {
+            Destroy(this.gameObject);
+        }
     }
 }
