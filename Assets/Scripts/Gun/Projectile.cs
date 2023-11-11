@@ -13,6 +13,6 @@ public class Projectile : MonoBehaviour
 
     void Update()
     {
-        this.transform.Translate(this.transform.forward * bulletSpeed * Time.deltaTime);
+        this.transform.Translate(Vector3.forward * bulletSpeed * Time.deltaTime);
     }
 }

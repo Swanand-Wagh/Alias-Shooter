@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
 
     public void LookAt(Vector3 lookPoint)
     {
-        Vector3 heightCorrectedPoint = new Vector3(lookPoint.x, transform.position.y, lookPoint.z);
+        Vector3 heightCorrectedPoint = new Vector3(lookPoint.x, transform.localScale.y, lookPoint.z);
         transform.LookAt(heightCorrectedPoint);
     }
 

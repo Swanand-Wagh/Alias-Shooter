@@ -16,7 +16,8 @@ public class GunController : MonoBehaviour
     private void EquipGun(Gun gun)
     {
         if (currentGun != null) Destroy(currentGun.gameObject);
-        currentGun = Instantiate(gun, GunHolder.position, GunHolder.rotation, GunHolder);
+        currentGun = Instantiate(gun, GunHolder.position, GunHolder.rotation);
+        currentGun.transform.parent = GunHolder;
     }
 
     public void ShootBullets()
