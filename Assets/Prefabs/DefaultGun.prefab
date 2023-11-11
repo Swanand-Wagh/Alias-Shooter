@@ -289,6 +289,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7166760212256248727}
+  - component: {fileID: -5485632246147462500}
   m_Layer: 0
   m_Name: DefaultGun
   m_TagString: Untagged
@@ -313,6 +314,22 @@ Transform:
   - {fileID: 3739405939600019088}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-5485632246147462500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4583417124590162941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f97f2b4cfd0ed4ebab9f5ed0d5ed6c19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  muzzle: {fileID: 3739405939600019088}
+  bullet: {fileID: -626537755397816526, guid: 2777bc72d025f458589a6d966624064e, type: 3}
+  msBetweenShots: 100
+  bulletSpeed: 35
 --- !u!1 &4763657305641957073
 GameObject:
   m_ObjectHideFlags: 0
