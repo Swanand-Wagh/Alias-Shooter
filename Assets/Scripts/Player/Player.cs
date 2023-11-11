@@ -4,15 +4,16 @@ using UnityEngine;
 
 [RequireComponent(typeof(PlayerController))]
 [RequireComponent(typeof(GunController))]
-public class Player : MonoBehaviour
+public class Player : LivingEntity
 {
     private PlayerController playerController;
     private GunController gunController;
 
     public float speed = 5f;
 
-    void Start()
+    protected override void Start()
     {
+        base.Start(); // call LivingEntity Start()
         playerController = GetComponent<PlayerController>();
         gunController = GetComponent<GunController>();
     }
@@ -30,7 +31,6 @@ public class Player : MonoBehaviour
         {
             if (hit.collider != null && hit.collider.CompareTag("Floor"))
             {
-                Debug.DrawLine(ray.origin, hit.point, Color.red);
                 playerController.LookAt(hit.point);
             }
         }

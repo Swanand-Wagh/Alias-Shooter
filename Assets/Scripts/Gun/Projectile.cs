@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    public float bulletSpeed;
+    private float bulletSpeed, damage = 1;
 
     public void SetBulletSpeed(float speed)
     {
@@ -23,6 +23,11 @@ public class Projectile : MonoBehaviour
         Ray ray = new Ray(this.transform.position, transform.right);
         if (Physics.Raycast(ray, out RaycastHit hit, dist, LayerMask.GetMask("Enemy"), QueryTriggerInteraction.Collide))
         {
+            IDamagable damagableObject = hit.collider.GetComponent<IDamagable>();
+            if (damagableObject != null)
+            {
+                damagableObject.TakeHit(damage, hit);
+            }
             Destroy(this.gameObject);
         }
     }

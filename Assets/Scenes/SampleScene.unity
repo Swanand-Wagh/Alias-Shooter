@@ -225,8 +225,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -415,7 +415,7 @@ Transform:
   m_GameObject: {fileID: 709370526}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5, y: 0.5, z: 5}
+  m_LocalPosition: {x: -1, y: 0.5, z: 3}
   m_LocalScale: {x: 5, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -625,7 +625,7 @@ Transform:
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
   m_LocalRotation: {x: 0.60876137, y: 0, z: 0, w: 0.7933534}
-  m_LocalPosition: {x: 0, y: 16.49, z: -5.82}
+  m_LocalPosition: {x: 0, y: 10, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -644,9 +644,9 @@ GameObject:
   - component: {fileID: 985109419}
   - component: {fileID: 985109418}
   - component: {fileID: 985109417}
+  - component: {fileID: 985109422}
   - component: {fileID: 985109416}
   - component: {fileID: 985109415}
-  - component: {fileID: 985109422}
   m_Layer: 6
   m_Name: Enemy
   m_TagString: Untagged
@@ -678,6 +678,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5660579d0fd8d4ebd9bc8a2c0c8309a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startingHealth: 5
 --- !u!54 &985109417
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -972,6 +973,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0998cee7fda6947ffbdc0f7ba35a5128, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startingHealth: 10
   speed: 5
 --- !u!114 &1987134323
 MonoBehaviour:
